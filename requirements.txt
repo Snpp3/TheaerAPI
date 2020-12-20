@@ -1,0 +1,8 @@
+Flask==1.1.2
+Flask-Migrate==2.5.3
+Flask-SQLAlchemy==2.4.1
+Flask-Cors==3.0.8
+Flask-RESTful==0.3.8
+python-dotenv==0.14.0
+psycopg2-binary==2.8.5
+gunicorn==20.0.4
