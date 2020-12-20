@@ -35,10 +35,6 @@ def save_contracts():
     contract = Contract(**request_json)
     session.add(contract)
     session.commit()
-
-    actor.salary = request_json['salary']
-    session.add(actor)
-    session.commit()
     return jsonify({'msg': 'Success', 'contract_id': contract.id})
 
 

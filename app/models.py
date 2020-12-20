@@ -36,7 +36,6 @@ class Actor(db.Model, BaseModel):
     rank = db.Column(VARCHAR(100), nullable=False)
     experience = db.Column(VARCHAR(100), nullable=False)
     achievements = db.Column(VARCHAR(100), nullable=False)
-    salary = db.Column(FLOAT, default=0)
     balance = db.Column(FLOAT, default=0)
     created_at = db.Column(DATE, default=datetime.utcnow)
     updated_at = db.Column(DATE, default=datetime.utcnow)
