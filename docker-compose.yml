@@ -1,9 +1,9 @@
 version: '3'
 
 services:
-  theater-api-api:
+  theater-api:
     build: .
-    container_name: theater-api-api
+    container_name: theater-api
     restart: always
     volumes:
       - .:/theater-api-api
