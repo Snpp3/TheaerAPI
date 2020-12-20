@@ -7,7 +7,7 @@ WORKDIR /theater-api
 ADD . /theater-api
 
 # Salary and premium cron every month
-RUN echo '* * * * * /usr/local/bin/python /theater-api/cronjobs/salary_payment_run.py' >> /etc/crontabs/root
+RUN echo '* * * * * /usr/local/bin/python /theater-api/cronjob_run.py salary_payment_run' >> /etc/crontabs/root
 
 RUN pip install -r requirements.txt
 
