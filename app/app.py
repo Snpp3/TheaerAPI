@@ -5,6 +5,7 @@ from flask import Flask, json, Response
 from flask_cors import CORS
 from werkzeug.exceptions import BadRequest, NotFound
 
+from app.models import Actor
 from app.configs import AppConfig, DBConfig
 from app.extensions import db
 from app.controllers.v1 import v1_blueprint
@@ -58,7 +59,7 @@ def configure_error_handlers(app: Flask):
             })
             response.content_type = "application/json"
             return response
-        if isinstance(BaseException):
+        if isinstance(e, BaseException):
             response = Response()
             response.data = json.dumps({
                 "code": 400,
