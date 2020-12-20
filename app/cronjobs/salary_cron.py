@@ -22,7 +22,7 @@ class SalaryPayment:
         if contract is None:
             return
         premium = PremiumConfigs.get_prize(num_plays)
-        actor.balance += actor.salary + premium if contract.min_premium_amount <= num_plays else 0
+        actor.balance += contract.salary + premium if contract.min_premium_amount <= num_plays else 0
         session = db.session
         session.add(actor)
         session.commit()
