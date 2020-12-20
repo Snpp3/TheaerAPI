@@ -14,7 +14,7 @@ def save_contracts():
     schema = {
         "term": str,
         "actor_id": int,
-        "salary_per_year": float,
+        "salary": float,
         "min_premium_amount": int,
         "sign_date": str,
         "expiration_date": str
@@ -36,7 +36,7 @@ def save_contracts():
     session.add(contract)
     session.commit()
 
-    actor.salary = request_json['salary_per_year'] / 12
+    actor.salary = request_json['salary']
     session.add(actor)
     session.commit()
     return jsonify({'msg': 'Success', 'contract_id': contract.id})

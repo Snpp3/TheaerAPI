@@ -16,7 +16,8 @@ class SalaryPayment:
 
     @staticmethod
     def pay_salary(actor):
-        num_plays = ActorsEmployment.query.filter(ActorsEmployment.actor_id == actor.id, ActorsEmployment.created_at > date.today() - timedelta(days=30)).count()
+        num_plays = ActorsEmployment.query.filter(ActorsEmployment.actor_id == actor.id,
+                                                  ActorsEmployment.created_at > date.today() - timedelta(days=31)).count()
         contract = Contract.query.filter(Contract.actor_id == actor.id).first()
         if contract is None:
             return

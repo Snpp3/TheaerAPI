@@ -13,6 +13,7 @@ services:
       - postgres
   postgres:
     image: postgres:12-alpine
+    container_name: theater-postgres
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
